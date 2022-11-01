@@ -1,5 +1,5 @@
 import subprocess
-import lib as lib
+import lib
 import os
 import optuna
 from copy import deepcopy
@@ -59,7 +59,7 @@ def objective(trial):
     num_timesteps = trial.suggest_categorical('num_timesteps', [100, 1000])
     num_samples = int(train_size * (2 ** trial.suggest_int('num_samples', -2, 1)))
 
-    base_config = lib.lib.load_config(base_config_path)
+    base_config = lib.load_config(base_config_path)
 
     base_config['train']['main']['lr'] = lr
     base_config['train']['main']['steps'] = steps
