@@ -1,5 +1,5 @@
 import subprocess
-import lib
+import lib as lib
 import os
 import optuna
 from copy import deepcopy
